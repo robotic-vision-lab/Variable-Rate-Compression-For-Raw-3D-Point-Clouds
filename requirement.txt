@@ -1,0 +1,6 @@
+numpy
+scikit-learn
+tensorflow-compression
+pyntcloud
+keras
+six
