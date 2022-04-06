@@ -12,12 +12,13 @@ ensuring the compact storage and transmission of such data.
 
 This repository provides source code for our 2022 ICRA paper titled "[Varible
 Rate Compression for Raw 3D Point Cloud Data](https://arxiv.org/pdf/2202.13862.pdf)."
-Our model can compress raw point clouds without converting them into a voxelized
-representation. More specifically, there are two prominent benefits of our
-approach: (i) there is no loss of information due to voxelization; (ii) the
-compression and reconstruction performance is not affected by the underlying
-point cloud density. Additionally, our technique reduces the unnecessary
-computational burden induced by the processing of unoccupied voxels. 
+Our model can compress raw point clouds, at a broad range of bitrates, without
+converting them into a voxelized representation. More specifically, there are
+two prominent benefits of our approach: (i) there is no loss of information due
+to voxelization; (ii) the compression and reconstruction performance is not
+affected by the underlying point cloud density. Additionally, our technique
+reduces the unnecessary computational burden induced by the processing of
+unoccupied voxels. 
 
 ### Citation
 If you find this project useful, then please consider citing our work.
@@ -34,7 +35,6 @@ If you find this project useful, then please consider citing our work.
 
 ### Model Architecture 
 <img src="images/model_architecture.png" alt="model_architecture" width="800"/>
-
 
 ### Installation
 This software was tested using Python 3.6,
