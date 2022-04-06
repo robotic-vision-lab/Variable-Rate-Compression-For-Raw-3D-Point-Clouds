@@ -37,15 +37,15 @@ If you find this project useful, then please consider citing our work.
 <img src="images/model_architecture.png" alt="model_architecture" width="800"/>
 
 ### Installation
-This software was tested using Python 3.6,
-<ahref="https://www.tensorflow.org/install/">TensorFlow</a> 1.14 and 1.15, and
+This software was tested using Python 3.6, 
+[TensorFlow](https://www.tensorflow.org/install) 1.14 and 1.15, and
 TensorFlow Compression 1.3. For the encoder, we utilize source code from the
 PointNet and PointNet++ GitHub repositories. Please follow the *Compile
 Customized TF Operators* section from
 [PointNet++](https://github.com/charlesq34/pointnet2) to compile the custom
 tf_ops. In addition, we make use of the 
-[Fan et al.](https://github.com/fanhqme/PointSetGeneration) chamfer/EMD loss 
-CUDA implementation. 
+[Fan et al.](https://github.com/fanhqme/PointSetGeneration) CUDA implementations
+of the chamfer and earth mover's distance.
 
 First, install the required Python libraries listed in requirements.txt. Then,
 
@@ -73,7 +73,7 @@ following command
 
 #### Decompression
 Likewise, with a modified path to the compressed file location, you can
-decompress the point cloud using the following command
+decompress a point cloud using the following command
 
         $ python compressor_decompressor.py decompress 
 
