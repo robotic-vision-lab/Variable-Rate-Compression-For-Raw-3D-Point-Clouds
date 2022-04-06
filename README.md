@@ -23,14 +23,17 @@ computational burden induced by the processing of unoccupied voxels.
 <img src="images/model_architecture.png" alt="model_architecture" width="800"/>
 
 ### Citation
-If you find our work useful in your research, please consider citing:
+If you find this project useful, then please consider citing our work.
 
-       @article{muzaddid2022variable,
-       title={Variable Rate Compression for Raw 3D Point Clouds},
-       author={Muzaddid, Md Ahmed Al and Beksi, William J},
-       journal={arXiv preprint arXiv:2202.13862},
-       year={2022}
+```bibitex
+@inproceedings{muzaddid2022variable,
+  title={Variable Rate Compression for Raw 3D Point Clouds},
+  author={Al Muzaddid, Md Ahmed and Beksi, William J},
+  booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={},
+  year={2022}
 }
+```
 
 ### Installation
 
