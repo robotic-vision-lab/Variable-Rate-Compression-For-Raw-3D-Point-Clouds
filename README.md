@@ -19,9 +19,6 @@ compression and reconstruction performance is not affected by the underlying
 point cloud density. Additionally, our technique reduces the unnecessary
 computational burden induced by the processing of unoccupied voxels. 
 
-### Model Architecture 
-<img src="images/model_architecture.png" alt="model_architecture" width="800"/>
-
 ### Citation
 If you find this project useful, then please consider citing our work.
 
@@ -35,44 +32,50 @@ If you find this project useful, then please consider citing our work.
 }
 ```
 
+### Model Architecture 
+<img src="images/model_architecture.png" alt="model_architecture" width="800"/>
+
+
 ### Installation
+This software was tested using Python 3.6,
+<ahref="https://www.tensorflow.org/install/">TensorFlow</a> 1.14 and 1.15, and
+TensorFlow Compression 1.3. For the encoder, we utilize source code from the
+PointNet and PointNet++ GitHub repositories. Please follow the *Compile
+Customized TF Operators* section from
+[PointNet++](https://github.com/charlesq34/pointnet2) to compile the custom
+tf_ops. In addition, we make use of the 
+[Fan et al.](https://github.com/fanhqme/PointSetGeneration) chamfer/EMD loss 
+CUDA implementation. 
 
-Code is tested with python 3.6, <a href="https://www.tensorflow.org/install/">TensorFlow</a> 
-version 1.14, 1.15 and *tensorflow-compression* version 1.3. For encoder part,
-we have borrowed the code from *pointnet* and *pointnet++* github codebase.
-Follow the *Compile Customized TF Operators* section
-from [pointnet++](https://github.com/charlesq34/pointnet2) to compile custom 
-tf_ops. Install required python library listed into requirement.txt.
-We have used [Fan et. al.](https://github.com/fanhqme/PointSetGeneration)
-cuda implementation of chamfer/EMD loss. To compile
-```
-cd src/external
+First, install the required Python libraries listed in requirements.txt. Then,
 
-with your editor modify the first three lines of the makefile to point to 
-your nvcc, cudalib and tensorflow library.
+        $ cd src/external
 
-make
-``` 
+and modify the first three lines of the makefile to point to your nvcc,
+cudalib, and tensorflow library. Finally, to compile the code run
+
+        $ make
+
 ### Usage
 
-#### Compression
-To compress pointcloud with a trained model, at first modify path 
- variables at the beginning of the *compressor_decompressor.py* file.
- Then run the following command: 
+####Training
+Before training, please modify the DATA_DIR path in *train.py* to point to your
+data directory location. Then, start training 
 
-        python compressor_decompressor.py compress 
+        $ python train.py 
+
+#### Compression
+To compress a point cloud using a trained model, first modify the path
+variables at the beginning of *compressor_decompressor.py*. Then, run the
+following command 
+
+        $ python compressor_decompressor.py compress 
 
 #### Decompression
-Similarly, with modified path reflecting the compressed file location,
- you can decompress the pointcloud using the following command: 
+Likewise, with a modified path to the compressed file location, you can
+decompress the point cloud using the following command
 
-        python compressor_decompressor.py decompress 
-
-####Training
-Before training, modify the DATA_DIR path in train.py file according to your
-data location. Then, simply run the *train.py* file 
-
-        python train.py 
+        $ python compressor_decompressor.py decompress 
 
 ### License 
 
