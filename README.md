@@ -73,3 +73,7 @@ Before training, modify the DATA_DIR path in train.py file according to your
 data location. Then, simply run the *train.py* file 
 
         python train.py 
+
+### License 
+
+[![license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/robotic-vision-lab/Variable-Rate-Compression-For-Raw-3D-Point-Clouds/blob/main/LICENSE)
