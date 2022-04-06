@@ -1,4 +1,4 @@
-## 3D Point Cloud Compression
+## Variable Rate Compression for Raw 3D Point Clouds
 
 ### Overview
 <img src="images/overview.png" alt="overview" width="400"/>
