@@ -58,7 +58,7 @@ cudalib, and tensorflow library. Finally, to compile the code run
 
 ### Usage
 
-####Training
+#### Training
 Before training, please modify the DATA_DIR path in *train.py* to point to your
 data directory location. Then, start training 
 
