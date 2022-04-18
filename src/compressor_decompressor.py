@@ -12,6 +12,7 @@ from timeit import default_timer as timer
 TRAINED_MODEL_DIR = "/home/ahmed/Data/pc_compress_evaluation/my_model/freq_fet_double_decoder/double_decoder_15_28_chamfer/training_checkpoints"
 COMPRESSION_STORE_BASEDIR =  "/home/ahmed/Data/pc_compress_evaluation/compressed_data"
 NPZ_DATA_DIR = '/home/ahmed/Data/pc_compress_evaluation/pointnet/classification'
+VEC_LENGTH = 1024
 
 def save_pointcloud_npz(X, X_quant, label, X_string, file_name):
     np.savez(file_name, X=X, X_quant= X_quant, label=label, X_string=X_string)
@@ -126,8 +127,11 @@ def decompress():
 #compress()
 #decompress()
 if __name__ == "__main__":
-    if len(sys.argv)> 1:
-        if sys.argv[1] == 'compress':
-            compress()
-        elif sys.argv[1] == 'decompress':
-            decompress()
+    if len(sys.argv)< 2:
+        print("Missing Compress or Decompress argument.")
+    if len(sys.argv)> 2:
+        VEC_LENGTH = int(sys.argv[2])
+    if sys.argv[1] == 'compress':
+        compress()
+    elif sys.argv[1] == 'decompress':
+        decompress()

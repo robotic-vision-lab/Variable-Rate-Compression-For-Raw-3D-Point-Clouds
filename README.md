@@ -71,6 +71,10 @@ following command
 
         $ python compressor_decompressor.py compress 
 
+To manipulate the compression rate specify the embedding length as follows.
+
+        $ python compressor_decompressor.py compress 884
+
 #### Decompression
 Likewise, with a modified path to the compressed file location, you can
 decompress a point cloud using the following command

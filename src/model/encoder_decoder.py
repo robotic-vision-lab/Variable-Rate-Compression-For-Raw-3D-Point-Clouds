@@ -46,6 +46,13 @@ class AutoEncoder(tf.keras.Model):
 
         return embed
 
+    def get_truncated_embedding(self, embedding, embedding_len):
+        embedding_size = embedding.get_shape()[1]
+        embedding = embedding[:, :embedding_len]
+        embedding = tf.pad(embedding, [[0,0], [0, embedding_size- embedding_len ]], "CONSTANT")
+        embedding = tf.reshape(embedding,[-1,1024])
+        return embedding
+
 
     def call(self, inputs, training=True):
         enable_freq_embedding = True
@@ -73,6 +80,8 @@ class AutoEncoder(tf.keras.Model):
             embedding, likelihoods = self.entropy_bottleneck(embedding, training=True)
             self.likelihoods = likelihoods
         else: #compressing, decompressing
+            if 'VEC_LENGTH' in globals():
+                embedding = self.get_truncated_embedding(embedding, VEC_LENGTH)
             self.embedding_string = self.entropy_bottleneck.compress(embedding)
             embedding = self.entropy_bottleneck.decompress(self.embedding_string, [1024] )#tf.shape(embedding)[1:],#channels=self.num_filters
         #embedding = tf.concat((label, embedding ), axis=-1)
