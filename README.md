@@ -71,7 +71,7 @@ following command
 
         $ python compressor_decompressor.py compress 
 
-To manipulate the compression rate, specify the embedding length as follows
+To change the compression rate, the embedding length can be specified as follows
 
         $ python compressor_decompressor.py compress 884
 
