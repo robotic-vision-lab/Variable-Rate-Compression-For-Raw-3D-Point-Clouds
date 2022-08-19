@@ -28,7 +28,7 @@ If you find this project useful, then please consider citing our work.
   title={Variable Rate Compression for Raw 3D Point Clouds},
   author={Al Muzaddid, Md Ahmed and Beksi, William J},
   booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
-  pages={},
+  pages={8748--8755},
   year={2022}
 }
 ```
